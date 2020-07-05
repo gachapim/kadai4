@@ -40,14 +40,14 @@ fi
 if [ 0 -lt $1 ]; then
 	: #なにもしない
 else
-	echo "第1引数が負の整数です。"
+	echo "第1引数が0または負の整数です。"
 	exit 1
 fi
 
 if [ 0 -lt $2 ];then
 	: #なにもしない
 else
-	echo "第2引数が負の整数です。"
+	echo "第2引数が0または負の整数です。"
 	exit 1
 
 fi
