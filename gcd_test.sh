@@ -31,10 +31,13 @@ diff $tmp-ans $tmp-args || ERROR_EXIT "引数が3つのときのチェックミ�
 #引数が整数以外の場合
 
 ./gcd.sh 1.1 1 > $tmp-ans
-diff $tmp-ans $tmp-nat1 || ERROR_EXIT "第1引数が整数でないときのチェックミス" 
+diff $tmp-ans $tmp-nat1 || ERROR_EXIT "第1引数が整数でないときのチェックミス"
 
-./gcd.sh 1 1.1 > $tmp-ans
+./gcd.sh 1 1.1 > $tmp-ansi
 diff $tmp-ans $tmp-nat2 || ERROR_EXIT "第2引数が整数でないときのチェックミス" 
+
+./gcd.sh a a > $tmp-ans
+diff $tmp-ans $tmp-nat1 || ERROR_EXIT "文字が入力されたときのチェックミス" 
 
 #引数がマイナスの場合
 
