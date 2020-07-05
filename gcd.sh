@@ -7,11 +7,15 @@ if [ $# -ne 2 ]; then
 	exit 1
 fi
 
+#引数を変数にいれる
+m=$1
+n=$2
+
 #第1引数の整数チェック	
-expr "$1" + 1 >/dev/null 2>&1
+expr "$m" + 1 >/dev/null 2>&1
 if [ $? -lt 2 ]; then
 	
-	echo "第1引数は$1です。"
+	: #なにもしない
 
 else
 
@@ -21,12 +25,29 @@ else
 fi
 
 #第2引数の整数チェック		
-expr "$2" + 1 >/dev/null 2>&1
+expr "$n" + 1 >/dev/null 2>&1
 if [ $? -lt 2 ]; then
 
-	echo "第2引数は$2です。"
+	: #なにもしない
+
 else
 	echo "第2引数に整数以外があります。"
+	exit 1
+
+fi
+
+#負の整数チェック
+if [ 0 -lt $1 ]; then
+	: #なにもしない
+else
+	echo "第1引数が負の整数です。"
+	exit 1
+fi
+
+if [ 0 -lt $2 ];then
+	: #なにもしない
+else
+	echo "第2引数が負の整数です。"
 	exit 1
 
 fi
@@ -43,5 +64,5 @@ while [ 0 -lt $1 ]
       
 	done
 
-echo "最大公約数は$2です。"
+echo "$mと$nの最大公約数は$2です。"
 
