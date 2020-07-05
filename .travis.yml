@@ -2,4 +2,4 @@ llanguage: bash
 script:
 - echo hello
 - echo Travis CI test in .travis.yml
-- ./gcd-test.sh
+- ./gcd_test.sh
